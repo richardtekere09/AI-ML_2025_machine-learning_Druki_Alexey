@@ -25,12 +25,7 @@ The objective of the course is to develop practical knowledge, skills, and compe
 
 ## 📂 Repository Structure
 
-├── labs/               # Laboratory assignments
-├── projects/           # Coursework projects (e.g., Spark MLlib project)
-├── final_report/       # Final lab report and documentation
-├── README.md           # Project description (this file)
-├── .gitignore          # Ignored files and directories
-
+![image](https://github.com/user-attachments/assets/aa2101bf-031d-4b4f-ac99-a3b958338751)
 
 ---
 
