@@ -1,0 +1,72 @@
+# ---------------------------------
+# Python
+# ---------------------------------
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cython debug symbols
+cython_debug/
+
+# ---------------------------------
+# Jupyter / Colab
+# ---------------------------------
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Colab sample data
+sample_data/
+
+# ---------------------------------
+# Virtual environments
+# ---------------------------------
+
+# Virtualenv / Pipenv
+.env/
+.venv/
+env/
+venv/
+ENV/
+Pipfile.lock
+poetry.lock
+
+# ---------------------------------
+# VSCode
+# ---------------------------------
+
+.vscode/
+
+# ---------------------------------
+# macOS system files
+# ---------------------------------
+
+.DS_Store
+
+# ---------------------------------
+# Spark temporary files
+# ---------------------------------
+
+.metastore_db/
+derby.log
+.sparkStaging/
+
+# ---------------------------------
+# Logs and temporary files
+# ---------------------------------
+
+*.log
+*.tmp
+
+# ---------------------------------
+# Other files to ignore
+# ---------------------------------
+
+# Ignore backup files
+*~
+# Ignore archive files
+*.zip
+*.tar.gz
+*.rar
