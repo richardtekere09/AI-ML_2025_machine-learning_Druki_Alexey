@@ -1,64 +1,74 @@
-# 💡 Laboratory Work No. 2  
-**Working with Tabular Data Using the Keras Library**
+# Noise Reduction on Images using Autoencoders
 
----
+This project implements a convolutional autoencoder to perform noise reduction (denoising) on handwritten digit images from the MNIST dataset using Keras.
 
-## 📚 Description
+## Objective
 
-This laboratory work focuses on:
-- Acquiring experience in working with tabular datasets,
-- Preprocessing and preparing data for machine learning,
-- Solving multiclass and binary classification problems using fully connected neural networks,
-- Studying and applying the functionality of the **Keras** machine learning library.
+- Learn how to construct and train convolutional autoencoders.
+- Apply deep learning techniques to reduce noise from images.
+- Visualize and evaluate the model performance on noisy and reconstructed images.
 
----
+## Dataset
 
-## 🎯 Objectives
+- **MNIST Dataset**: A standard dataset of 28x28 grayscale images of handwritten digits (0-9).
+- Noise is artificially added using Gaussian noise to simulate corrupted images.
 
-- Develop skills in loading, preprocessing, and analyzing tabular data using **Pandas** and **Scikit-learn**.
-- Learn how to build, train, and evaluate artificial neural networks using **Keras**.
-- Solve both multiclass and binary classification problems on real-world datasets.
+## Project Structure
 
----
+The project follows these key steps:
 
-## 🛠 Tasks
+1. **Data Loading and Preprocessing**
+    - Load MNIST dataset.
+    - Normalize pixel values to [0,1].
+    - Add Gaussian noise to the images.
+2. **Model Construction**
+    - Build a convolutional autoencoder:
+        - **Encoder**: Compress input images into a lower-dimensional representation.
+        - **Decoder**: Reconstruct images from the encoded representation.
+3. **Model Training**
+    - Compile with Adam optimizer and binary crossentropy loss.
+    - Train using noisy images as input and original images as targets.
+4. **Evaluation**
+    - Plot training and validation accuracy and loss.
+    - Evaluate the model performance on the test dataset.
+5. **Visualization**
+    - Display original, noisy, and reconstructed images for qualitative analysis.
 
-1. Load the dataset and perform exploratory data analysis.
-2. Encode categorical features and labels.
-3. Normalize numerical features.
-4. Split the data into training, validation, and test sets.
-5. Design and build deep learning models using **Keras Sequential API**.
-6. Compile models with appropriate optimizers, loss functions, and metrics.
-7. Train models and monitor the learning process (accuracy and loss curves).
-8. Evaluate models on the test data and analyze the results.
+## Key Libraries
 
----
-
-## 🗂 Datasets Used
-
-### 1. Body Performance Dataset
-- **Source:** [Kaggle – Body Performance](https://www.kaggle.com/datasets/kukuroo3/body-performance-data)
-- **Input:** Physical attributes (age, gender, height, weight, fitness test results).
-- **Target:** `class` — Physical development class (A, B, C, D).
-- **Task:** **Multiclass classification** (4 classes).
-
-### 2. Bank Marketing Dataset
-- **Source:** [UCI Bank Marketing](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)
-- **Input:** Customer demographic and campaign information.
-- **Target:** `y` — Subscription to a term deposit (yes/no).
-- **Task:** **Binary classification** (2 classes).
-
----
-
-## ⚙️ Requirements
-
-- Python 3.x
-- TensorFlow (Keras)
-- Scikit-learn
-- Pandas
+- TensorFlow / Keras
+- NumPy
 - Matplotlib
 
-Install the required libraries:
+## How to Run
 
-```bash
-pip install tensorflow scikit-learn pandas matplotlib
+1. Install required libraries:
+    ```bash
+    pip install tensorflow numpy matplotlib
+    ```
+
+2. Run the Jupyter Notebook or Python script:
+    ```bash
+    python Noise_reduction_images.py
+    ```
+
+3. Outputs:
+    - Training and validation accuracy/loss graphs.
+    - Side-by-side visualization of original, noisy, and reconstructed images.
+
+## Results
+
+- The autoencoder effectively removes noise and restores clean digits.
+- The final model achieves a binary crossentropy loss of approximately **0.096** on the test dataset.
+- Visual inspection confirms successful noise reduction.
+
+## Screenshots
+
+📸 Training graphs of accuracy and loss  
+📸 Sample original, noisy, and reconstructed images
+
+## Conclusion
+
+Through this lab, practical skills were gained in building convolutional autoencoders for denoising tasks using Keras. The model demonstrated strong performance in reconstructing clean images from noisy inputs.
+
+---
