@@ -64,12 +64,7 @@ The project follows these key steps:
               └── label/
       ```
 
-3. Run the Python script or Colab notebook:
-    ```bash
-    python segmentation_lab6.py
-    ```
-
-4. Outputs:
+3. Outputs:
     - Training history (loss reduction per epoch).
     - Model evaluation on the test set.
     - Visualization of segmented images.
