@@ -1,64 +1,95 @@
-# 💡 Laboratory Work No. 2  
-**Working with Tabular Data Using the Keras Library**
+# Image Segmentation using Convolutional Neural Networks (CNN)
 
----
+This project implements a convolutional neural network (CNN) to perform semantic segmentation on grayscale medical images. The model is trained and evaluated using the Keras deep learning library in Google Colab.
 
-## 📚 Description
+## Objective
 
-This laboratory work focuses on:
-- Acquiring experience in working with tabular datasets,
-- Preprocessing and preparing data for machine learning,
-- Solving multiclass and binary classification problems using fully connected neural networks,
-- Studying and applying the functionality of the **Keras** machine learning library.
+- Learn how to build and train convolutional neural networks for image segmentation tasks.
+- Apply deep learning techniques to distinguish and segment structures in grayscale images.
+- Visualize and evaluate the model’s segmentation performance.
 
----
+## Dataset
 
-## 🎯 Objectives
+- **Medical Membrane Images (ISBI 2012-like)**: Grayscale images of size 512x512 pixels.
+- Dataset split:
+  - **Training set**: 30 images and masks.
+  - **Testing set**: 30 images and masks.
+- Images represent cell membranes and require binary segmentation.
 
-- Develop skills in loading, preprocessing, and analyzing tabular data using **Pandas** and **Scikit-learn**.
-- Learn how to build, train, and evaluate artificial neural networks using **Keras**.
-- Solve both multiclass and binary classification problems on real-world datasets.
+## Project Structure
 
----
+The project follows these key steps:
 
-## 🛠 Tasks
+1. **Data Loading and Preprocessing**
+    - Load images and masks from Google Drive.
+    - Normalize pixel values to [0,1].
+    - Reshape data to fit the model input requirements.
+2. **Model Construction**
+    - Build a simple sequential CNN model:
+        - Multiple Conv2D layers with ReLU activations.
+        - Final Conv2D layer with sigmoid activation for pixel-wise prediction.
+3. **Model Training**
+    - Compile the model with Adam optimizer and mean squared error (MSE) loss.
+    - Train the model using the training dataset.
+4. **Evaluation**
+    - Evaluate the model performance on the test dataset using MSE.
+5. **Visualization**
+    - Predict segmentation masks for test images.
+    - Display the predicted masks to assess model quality visually.
 
-1. Load the dataset and perform exploratory data analysis.
-2. Encode categorical features and labels.
-3. Normalize numerical features.
-4. Split the data into training, validation, and test sets.
-5. Design and build deep learning models using **Keras Sequential API**.
-6. Compile models with appropriate optimizers, loss functions, and metrics.
-7. Train models and monitor the learning process (accuracy and loss curves).
-8. Evaluate models on the test data and analyze the results.
+## Key Libraries
 
----
-
-## 🗂 Datasets Used
-
-### 1. Body Performance Dataset
-- **Source:** [Kaggle – Body Performance](https://www.kaggle.com/datasets/kukuroo3/body-performance-data)
-- **Input:** Physical attributes (age, gender, height, weight, fitness test results).
-- **Target:** `class` — Physical development class (A, B, C, D).
-- **Task:** **Multiclass classification** (4 classes).
-
-### 2. Bank Marketing Dataset
-- **Source:** [UCI Bank Marketing](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)
-- **Input:** Customer demographic and campaign information.
-- **Target:** `y` — Subscription to a term deposit (yes/no).
-- **Task:** **Binary classification** (2 classes).
-
----
-
-## ⚙️ Requirements
-
-- Python 3.x
-- TensorFlow (Keras)
-- Scikit-learn
-- Pandas
+- TensorFlow / Keras
+- NumPy
 - Matplotlib
+- PIL
+- Google Colab (Drive Integration)
 
-Install the required libraries:
+## How to Run
 
-```bash
-pip install tensorflow scikit-learn pandas matplotlib
+1. Install required libraries:
+    ```bash
+    pip install tensorflow numpy matplotlib pillow
+    ```
+
+2. Upload the dataset to Google Drive:
+    - Structure:
+      ```
+      /My Drive/membrane/
+         ├── train/
+         │    ├── image/
+         │    └── label/
+         └── test/
+              ├── image/
+              └── label/
+      ```
+
+3. Run the Python script or Colab notebook:
+    ```bash
+    python segmentation_lab6.py
+    ```
+
+4. Outputs:
+    - Training history (loss reduction per epoch).
+    - Model evaluation on the test set.
+    - Visualization of segmented images.
+
+## Results
+
+- The CNN model successfully segmented cell membranes from grayscale images.
+- Mean Squared Error (MSE) evaluation metric indicated good performance.
+- Visual inspection showed clear separation of structures after segmentation.
+
+## Screenshots
+
+📸 Example of a training image and corresponding ground truth mask  
+📸 Training loss curve over epochs  
+📸 Predicted segmentation mask from the test dataset
+
+## Conclusion
+
+Through this lab, practical skills were gained in constructing and training convolutional neural networks for semantic image segmentation using Keras. The model demonstrated the ability to highlight important structures in medical images effectively.
+
+---
+
+
